@@ -14,7 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variables:
     floatVariables: []
-    intVariables: []
+    intVariables:
+    - useVariable: 1
+      name: "Credibilit\xE0"
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
+    - useVariable: 1
+      name: Time
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 0
     boolVariables: []
     stringVariables: []
     vector2Variables: []
@@ -30,7 +42,9 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 
+    variableCategoryIDs: 0000000000000000
   events:
   - Risposta giusta
   - Start G2
+  - Add Time
+  - Stop Time
