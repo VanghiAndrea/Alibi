@@ -404,7 +404,7 @@ MonoBehaviour:
       position:
         serializedVersion: 2
         x: 60.085938
-        y: 225.42188
+        y: 273.42188
         width: 140
         height: 48
       isBreakpoint: 0
@@ -457,15 +457,15 @@ MonoBehaviour:
         - useVariable: 1
           name: Valore iniziale
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 17
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0
+          value: 17
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
@@ -490,14 +490,23 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 318.625
-        y: 108.94531
-        width: 111
-        height: 16
+        x: 294.875
+        y: 64.015625
+        width: 107
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: 
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntAdd
@@ -526,9 +535,9 @@ MonoBehaviour:
         - useVariable: 1
           name: Valore iniziale
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 17
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -559,14 +568,23 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 299.3203
-        y: 358.79688
+        x: 298.7578
+        y: 487.39844
         width: 100
-        height: 16
+        height: 32
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: FINISHED
+          isSystemEvent: 1
+          isGlobal: 0
+        toState: 
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntSubtract
@@ -595,9 +613,9 @@ MonoBehaviour:
         - useVariable: 1
           name: Valore iniziale
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 17
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -624,28 +642,57 @@ MonoBehaviour:
         - perSecond
         paramDataPos: 00000000010000000000000001000000
         paramByteDataSize: 00000000000000000100000001000000
-    - name: Punteggio totale
+    - name: Punteggio attuale
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 527.85156
-        y: 216.47656
-        width: 127
-        height: 16
+        x: 604.8906
+        y: 286.42188
+        width: 134
+        height: 64
       isBreakpoint: 0
       isSequence: 0
       hideUnused: 0
-      transitions: []
+      transitions:
+      - fsmEvent:
+          name: Go to fase 1
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Fase 1
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Go to fase 2
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Fase 2
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      - fsmEvent:
+          name: Go to fase 3
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: Fase 3
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
       actionData:
         actionNames:
         - HutongGames.PlayMaker.Actions.IntWrap
+        - HutongGames.PlayMaker.Actions.IntSwitch
         customNames:
         - 
-        actionEnabled: 01
-        actionIsOpen: 01
-        actionStartIndex: 00000000
-        actionHashCodes: 2181e802
+        - 
+        actionEnabled: 0101
+        actionIsOpen: 0101
+        actionStartIndex: 0000000004000000
+        actionHashCodes: 2181e802092dca00
         unityObjectParams: []
         fsmGameObjectParams: []
         fsmOwnerDefaultParams: []
@@ -665,9 +712,9 @@ MonoBehaviour:
         - useVariable: 1
           name: Valore iniziale
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 17
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -680,33 +727,72 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 1
+          name: Valore iniziale
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 9
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 17
         fsmBoolParams: []
         fsmVector2Params: []
         fsmVector3Params: []
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 00
-        arrayParamSizes: 
-        arrayParamTypes: []
+        stringParams:
+        - Go to fase 1
+        - Go to fase 2
+        - Go to fase 3
+        byteData: 0000
+        arrayParamSizes: 0300000003000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmInt
+        - HutongGames.PlayMaker.FsmEvent
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 10000000100000001000000001000000
+        paramDataType: 10000000100000001000000001000000100000000c0000001000000010000000100000000c00000017000000170000001700000001000000
         paramName:
         - intVariable
         - minValue
         - maxValue
         - everyFrame
-        paramDataPos: 00000000010000000200000000000000
-        paramByteDataSize: 00000000000000000000000001000000
+        - intVariable
+        - compareTo
+        - 
+        - 
+        - 
+        - sendEvent
+        - 
+        - 
+        - 
+        - everyFrame
+        paramDataPos: 0000000001000000020000000000000003000000000000000400000005000000060000000100000000000000010000000200000001000000
+        paramByteDataSize: 0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000001000000
     - name: Fase 1
       description: 
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 824.14844
-        y: 52.3125
+        x: 972.875
+        y: 150.01562
         width: 100
         height: 16
       isBreakpoint: 0
@@ -741,9 +827,9 @@ MonoBehaviour:
         - useVariable: 1
           name: Valore iniziale
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 17
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -781,8 +867,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 822.8047
-        y: 204.28906
+        x: 963.3906
+        y: 300.89844
         width: 100
         height: 16
       isBreakpoint: 0
@@ -817,9 +903,9 @@ MonoBehaviour:
         - useVariable: 1
           name: Valore iniziale
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 17
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -857,8 +943,8 @@ MonoBehaviour:
       colorIndex: 0
       position:
         serializedVersion: 2
-        x: 819.5703
-        y: 333.8672
+        x: 964.9219
+        y: 437.42188
         width: 100
         height: 16
       isBreakpoint: 0
@@ -893,9 +979,9 @@ MonoBehaviour:
         - useVariable: 1
           name: Valore iniziale
           tooltip: 
-          showInInspector: 1
+          showInInspector: 0
           networkSync: 0
-          value: 17
+          value: 0
         - useVariable: 0
           name: 
           tooltip: 
@@ -928,11 +1014,110 @@ MonoBehaviour:
         - everyFrame
         paramDataPos: 00000000010000000200000000000000
         paramByteDataSize: 00000000000000000000000001000000
+    - name: Game over
+      description: 
+      colorIndex: 0
+      position:
+        serializedVersion: 2
+        x: 1261.2969
+        y: 306.03125
+        width: 100
+        height: 32
+      isBreakpoint: 0
+      isSequence: 0
+      hideUnused: 0
+      transitions:
+      - fsmEvent:
+          name: Game over
+          isSystemEvent: 0
+          isGlobal: 0
+        toState: 
+        linkStyle: 0
+        linkConstraint: 0
+        linkTarget: 0
+        colorIndex: 0
+      actionData:
+        actionNames:
+        - HutongGames.PlayMaker.Actions.IntSwitch
+        customNames:
+        - 
+        actionEnabled: 01
+        actionIsOpen: 01
+        actionStartIndex: 00000000
+        actionHashCodes: 092dca00
+        unityObjectParams: []
+        fsmGameObjectParams: []
+        fsmOwnerDefaultParams: []
+        animationCurveParams: []
+        functionCallParams: []
+        fsmTemplateControlParams: []
+        fsmEventTargetParams: []
+        fsmPropertyParams: []
+        layoutOptionParams: []
+        fsmStringParams: []
+        fsmObjectParams: []
+        fsmVarParams: []
+        fsmArrayParams: []
+        fsmEnumParams: []
+        fsmFloatParams: []
+        fsmIntParams:
+        - useVariable: 1
+          name: Valore iniziale
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Valore game over
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        fsmBoolParams: []
+        fsmVector2Params: []
+        fsmVector3Params: []
+        fsmColorParams: []
+        fsmRectParams: []
+        fsmQuaternionParams: []
+        stringParams:
+        - Game over
+        byteData: 00
+        arrayParamSizes: 0100000001000000
+        arrayParamTypes:
+        - HutongGames.PlayMaker.FsmInt
+        - HutongGames.PlayMaker.FsmEvent
+        customTypeSizes: 
+        customTypeNames: []
+        paramDataType: 100000000c000000100000000c0000001700000001000000
+        paramName:
+        - intVariable
+        - compareTo
+        - 
+        - sendEvent
+        - 
+        - everyFrame
+        paramDataPos: 000000000000000001000000010000000000000000000000
+        paramByteDataSize: 000000000000000000000000000000000000000001000000
     events:
     - name: Risposta giusta
       isSystemEvent: 0
       isGlobal: 1
     - name: Risposta sbagliata
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Game over
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
+    - name: Go to fase 1
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Go to fase 2
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: Go to fase 3
       isSystemEvent: 0
       isGlobal: 0
     globalTransitions: []
@@ -942,9 +1127,9 @@ MonoBehaviour:
       - useVariable: 1
         name: Valore iniziale
         tooltip: 
-        showInInspector: 1
+        showInInspector: 0
         networkSync: 0
-        value: 17
+        value: 0
       boolVariables: []
       stringVariables: []
       vector2Variables: []
@@ -973,7 +1158,13 @@ MonoBehaviour:
     keepDelayedEventsOnStateExit: 0
     preprocessed: 0
     ExposedEvents: []
-    OutputEvents: []
+    OutputEvents:
+    - name: Game over
+      isSystemEvent: 0
+      isGlobal: 0
+    - name: FINISHED
+      isSystemEvent: 1
+      isGlobal: 0
     RestartOnEnable: 1
     ResetVariablesOnEnable: 0
     EnableDebugFlow: 0
